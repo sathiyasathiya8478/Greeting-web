@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="A modern, beautiful greeting web application with animated effects." />
+  <title>Greeting App ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Canvas Confetti CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Glowing burst overlay -->
+  <div id="glowing-burst-overlay" class="glow-overlay"></div>
+
+  <!-- Animated background particles -->
+  <div class="bg-particles" id="bg-particles"></div>
+
+  <!-- Main App Card -->
+  <main class="app-container" role="main">
+    <div class="card" id="app-card">
+      <div class="card-icon">👋</div>
+      <h1 class="app-title">Say Hello!</h1>
+      <p class="app-subtitle">Let's create a personalized greeting for you</p>
+
+      <div class="form-group">
+        <label class="input-label" for="name-input">Enter Your Name</label>
+        <div class="input-wrapper">
+          <span class="input-icon">✏️</span>
+          <input
+            type="text"
+            id="name-input"
+            class="name-input"
+            placeholder="Type your name here"
+            autocomplete="off"
+            maxlength="50"
+            aria-label="Enter your name"
+          />
+        </div>
+      </div>
+
+      <button id="greet-btn" class="greet-btn" aria-label="Click to get your greeting">
+        <span class="btn-text">Greet</span>
+        <span class="btn-icon">🎉</span>
+      </button>
+
+      <div id="greeting-display" class="greeting-display" role="status" aria-live="polite"></div>
+    </div>
+  </main>
+
+  <!-- Test Runner (hidden by default, shown via ?test=true) -->
+  <div id="test-panel" class="test-panel" style="display:none;">
+    <div class="test-header">
+      <h2>🧪 Test Results</h2>
+      <button id="run-tests-btn" class="run-tests-btn">Run Tests</button>
+      <button id="close-tests-btn" class="close-tests-btn">✕ Close</button>
+    </div>
+    <div id="test-results" class="test-results"></div>
+  </div>
+
+  <!-- Floating Test Button -->
+  <button id="test-toggle-btn" class="test-toggle-btn" title="Run Tests">🧪</button>
+
+  <script src="animations.js"></script>
+  <script src="app.js"></script>
+  <script src="tests.js"></script>
+</body>
+</html>
